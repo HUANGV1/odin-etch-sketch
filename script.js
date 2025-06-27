@@ -70,6 +70,6 @@ newColorButton.addEventListener('click', ()=>{
 
 });
 
-
+generateGrid(16);
 
 
