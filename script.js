@@ -4,6 +4,16 @@ const newColorButton = document.querySelector('#button-change-color');
 const resetBackgroundButton = document.querySelector('#button-reset-background');
 let drawColor='grey';
 
+let mouseDown=false;
+
+document.addEventListener('mousedown', ()=>{
+    mouseDown=true;
+});
+
+document.addEventListener('mouseup', ()=>{
+    mouseDown=false;
+});
+
 function generateGrid(size) {
 
     container.innerHTML='';
@@ -18,7 +28,11 @@ function generateGrid(size) {
         cell.style.width = `${cellSize}%`;
         cell.style.height = `${cellSize}%`;
 
-        cell.addEventListener('mouseenter', () => {cell.style.backgroundColor=drawColor});
+        cell.addEventListener('mouseenter', () => {
+            if (mouseDown) {
+                cell.style.backgroundColor=drawColor;
+            }
+        });
 
         container.appendChild(cell);
         console.log('Creating cell:', i);
