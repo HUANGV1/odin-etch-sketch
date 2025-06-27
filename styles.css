@@ -1,0 +1,19 @@
+#grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 640px;
+    width: 640px;
+}
+
+.grid-cell {
+    border: 1px solid lightblue;
+    box-sizing: border-box;
+}
+
+#controls {
+    margin-bottom: 10px;
+}
+
+#button-change-size, #button-change-color, #button-reset-background {
+    padding: 10px;
+}
